@@ -1,5 +1,45 @@
-.profile-image {
-    width: 1000 px;
-    height: auto;
-     
-}
+.logo-container {
+    position: relative;
+    width: 500px; 
+    height: 500px; 
+  }
+  
+  .image-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .top-layer {
+    z-index: 1;
+    transform-origin: top;
+  }
+  
+  .bottom-layer {
+    z-index: 10;
+    transform-origin: bottom;
+  }
+
+  .left-layer {
+    z-index: 10;
+    transform-origin: bottom;
+  }
+  
+  .image-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hovered.top-layer {
+    transform: translateY(-20px); 
+  }
+  
+  .hovered.bottom-layer {
+    transform: translateY(50px); 
+  }
+
