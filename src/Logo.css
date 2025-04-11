@@ -4,6 +4,14 @@
   height: 500px;
   overflow: hidden;
   cursor: pointer;
+  transition: all 1s ease-in-out; 
+  z-index: 5;
+}
+
+.logo-container.clicked {
+  transform: translate(200px, 100px) scale(0.2); 
+  opacity: 0;
+  pointer-events: none; 
 }
 
 .image-layer {
@@ -30,7 +38,7 @@
   height: 100%;
 }
 
-/* Hover animations — left/right */
+
 .logo-container:hover .top-layer {
   transform: translateX(-50px);
 }
@@ -39,7 +47,7 @@
   transform: translateX(50px);
 }
 
-/* Click animations — up/down override hover */
+
 .logo-container.clicked .top-layer {
   opacity: 0.2;
   transform: scale(1.05);

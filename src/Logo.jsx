@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Logo.css';
 
-const Logo = () => {
-  const [isClicked, setIsClicked] = useState(false);
-
+const Logo = ({ isClicked, setIsClicked }) => {
   const handleClick = () => {
     setIsClicked((prev) => !prev);
   };
-
-  
 
   return (
     <div
