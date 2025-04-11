@@ -1,45 +1,58 @@
 .logo-container {
-    position: relative;
-    width: 500px; 
-    height: 500px; 
-  }
-  
-  .image-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .top-layer {
-    z-index: 1;
-    transform-origin: top;
-  }
-  
-  .bottom-layer {
-    z-index: 10;
-    transform-origin: bottom;
-  }
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  cursor: pointer;
+}
 
-  .left-layer {
-    z-index: 10;
-    transform-origin: bottom;
-  }
-  
-  .image-layer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .hovered.top-layer {
-    transform: translateY(-20px); 
-  }
-  
-  .hovered.bottom-layer {
-    transform: translateY(50px); 
-  }
+.image-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.top-layer {
+  z-index: 1;
+  transform-origin: top;
+}
+
+.bottom-layer {
+  z-index: 10;
+  transform-origin: bottom;
+}
+
+.image-layer img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover animations — left/right */
+.logo-container:hover .top-layer {
+  transform: translateX(-50px);
+}
+
+.logo-container:hover .bottom-layer {
+  transform: translateX(50px);
+}
+
+/* Click animations — up/down override hover */
+.logo-container.clicked .top-layer {
+  opacity: 0.2;
+  transform: scale(1.05);
+}
+
+.logo-container.clicked .bottom-layer {
+  opacity: 0.2;
+  transform: scale(0.95);
+}
+
+.logo-container.clicked .top-layer,
+.logo-container.clicked .bottom-layer {
+  opacity: 0.3;
+  filter: grayscale(100%) blur(1px);
+  transform: scale(1.05);
+}
