@@ -64,3 +64,85 @@
   filter: grayscale(100%) blur(1px);
   transform: scale(1.05);
 }
+
+@media (max-width: 900px) {
+  .logo-container {
+    width: 400px;
+    height: 400px;
+  }
+
+  .logo-container.clicked {
+    transform: translate(150px, 75px) scale(0.3); 
+  }
+
+  .logo-container:hover .top-layer {
+    transform: translateX(-40px); 
+  }
+
+  .logo-container:hover .bottom-layer {
+    transform: translateX(40px); 
+  }
+}
+
+
+@media (max-width: 600px) {
+  .logo-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .logo-container.clicked {
+    transform: translate(100px, 50px) scale(0.4); 
+  }
+
+  .logo-container:hover .top-layer {
+    transform: translateX(-30px); 
+  }
+
+  .logo-container:hover .bottom-layer {
+    transform: translateX(30px); 
+  }
+}
+
+.logo-typewriter {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  font-weight: 600;
+  color: orange;
+  font-family:Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 20;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.7s infinite;
+  color: orange;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .logo-typewriter {
+    font-size: 14px;
+    bottom: 12px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-typewriter {
+    font-size: 12px;
+    bottom: 10px;
+    right: 12px;
+  }
+}

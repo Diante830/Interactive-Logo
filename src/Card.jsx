@@ -15,6 +15,11 @@ const Card = ({ isLogoClicked, toggleCard }) => {
           <div className="name">Diante Hazelle-Mclean</div>
           <div className="job">Web Developer & Graphic Designer</div>
 
+          {/* New Bio Section */}
+          <div className="bio">
+            Passionate about designing user-friendly websites and creating beautiful graphic designs. Focused on building innovative and responsive web applications.
+          </div>
+
           <div className="actions">
             <a href="https://diantes-design-portfolio.webflow.io/" target="_blank">
               <button className="btn">Portfolio</button>
@@ -48,7 +53,7 @@ const Card = ({ isLogoClicked, toggleCard }) => {
       </div>
       
       <div className="close-btn" onClick={toggleCard}>
-	  ⓧ
+        ⓧ
       </div>
     </div>
   );
